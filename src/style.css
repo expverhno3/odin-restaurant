@@ -1,0 +1,9 @@
+div#content {
+    display: grid;
+    grid-template-columns: 30vw 30vw 30vw;
+    gap: 10px;
+}
+
+div.cell {
+    background-color: aquamarine;
+}
