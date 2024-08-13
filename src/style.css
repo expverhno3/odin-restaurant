@@ -1,9 +1,49 @@
-div#content {
-    display: grid;
-    grid-template-columns: 30vw 30vw 30vw;
+body {
+    margin: 0;
+}
+
+header {
+    background-color: brown;
+    padding: 5px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 10px;
 }
 
-div.cell {
+nav>button {
+    width: 100px;
+    height: 50px;
+    border: 1px solid black;
+    /* round corner */
+    border-radius: 10px;
+    background-color: bisque;
+}
+
+
+div#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -10px;
+    gap: 10px;
+    max-width: 80vw;
+    left: 10vw;
+    right: 10vw;
     background-color: aquamarine;
+    margin: 0;
+}
+
+div.container {
+    display: flex;
+    background-color: bisque;
+    border: 1px solid blue;
+    width: 800px;
+    text-align: center;
+    justify-content: center;
 }

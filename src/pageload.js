@@ -1,28 +1,41 @@
 const content = document.querySelector("div#content");
 
-export function addCells(numberCells) {
-  let i = 0;
-
-  while (i < numberCells) {
-    const cell = document.createElement("div");
-    cell.classList.add("cell");
-    content.appendChild(cell);
-    i++;
-  }
+function addTitle(title) {
+  const titleContainer = document.createElement("div");
+  content.appendChild(titleContainer);
+  titleContainer.classList.add("title-container");
+  titleContainer.classList.add("container");
+  const titleElement = document.createElement("h1");
+  titleElement.textContent = title;
+  titleContainer.appendChild(titleElement);
+  titleElement.classList.add("title");
 }
 
-export function addCellContent() {
-    const cells = document.querySelectorAll(".cell");
-
-    cells.forEach((cell) => {
-        const cellContent = document.createElement("div");
-        cellContent.classList.add("cell-content");
-        cellContent.textContent = 'this is some text content within the cell'
-        cell.appendChild(cellContent);
-    })
+function addReview(review) {
+  const reviewContainer = document.createElement("div");
+  content.appendChild(reviewContainer);
+  reviewContainer.classList.add("review-container");
+  reviewContainer.classList.add("container");
+  const reviewElement = document.createElement("p");
+  reviewElement.textContent = review;
+  reviewContainer.appendChild(reviewElement);
+  reviewElement.classList.add("review");
 }
 
-export function renderPage() {
-    addCells(9)
-    addCellContent()
+function addInfo(info) {
+  const infoContainer = document.createElement("div");
+  content.appendChild(infoContainer);
+  infoContainer.classList.add("info-container");
+  infoContainer.classList.add("container");
+  const ul = document.createElement("ul");
+  ul.classList.add('info-hour-list')
+  info.forEach((row) => {
+    const list = document.createElement("li");
+    list.textContent = `${row[0]}` + "am - " + `${row[1]}pm`;
+    list.classList.add('info-hour')
+    ul.appendChild(list)
+  });
+  infoContainer.appendChild(ul)
 }
+
+export { addTitle, addReview, addInfo };
